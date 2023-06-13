@@ -2,25 +2,6 @@
 
 {{define "content"}}
 
-<div class="container">
-        <div class="row">
-            <div class="col">
-                <H1>This is the About Page </H1>
-                <p>paragraph of text</p>
-                <p>another one</p>
-                <p>This came from the template: {{index .StringMap "test"}} </p>
 
-                <p>
-                    {{if ne (index .StringMap "remote_ip") ""}}
-                    Your remote IP address is {{index .StringMap "remote_ip"}}
-                    {{else}}
-                    I don't know your up address yet. Visit the <a href="/">Home Page</a>
-                    {{end}}
-                </p>
-            </div>
-
-
-        </div>
-    </div>
 
 {{end}}
