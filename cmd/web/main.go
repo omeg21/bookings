@@ -1,6 +1,7 @@
 package main
 
 import (
+	"encoding/gob"
 	"fmt"
 	"log"
 	"net/http"
@@ -8,6 +9,7 @@ import (
 
 	"github.com/omeg21/bookings/pkg/config"
 	"github.com/omeg21/bookings/pkg/handlers"
+	"github.com/omeg21/bookings/pkg/models"
 
 	"github.com/omeg21/bookings/pkg/render"
 
@@ -21,6 +23,8 @@ var session *scs.SessionManager
 
 // main is the main function
 func main() {
+	//What I'm putting in the session
+	gob.Register(models.Reservation{})
 	// change this to true when in production
 	app.InProduction = false
 
